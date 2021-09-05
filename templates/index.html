@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html background="32b877ed4aa7778cc7d43ebb7d95a6f1.png";>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Fake News Checker</title>
+  <link href='https://fonts.googleapis.com/css?family=Arial' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arial' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel=“stylesheet” type=“text/css” href=“style.css” />
+</head>
+
+<body>
+ <div style="text-align:center;font-size:35px;" class="login">
+	<h3>Fake News Checker</h3>
+
+     <!-- Main Input For Receiving Query to our ML -->
+     <form action="{{ url_for('predict')}}" method="post" target="_blank">
+ <textarea name="review_text" placeholder="Enter your english news article here..." rows="10" cols="100"></textarea>
+
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+  </form>
+
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
